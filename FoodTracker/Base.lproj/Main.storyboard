@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,23 +20,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iad-g0-Htf">
-                                <rect key="frame" x="20" y="80" width="560" height="104.5"/>
+                                <rect key="frame" x="20" y="80" width="560" height="105"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faC-5x-qUQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dL8-6z-1SN">
-                                        <rect key="frame" x="0.0" y="32.5" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="33" width="560" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhE-W9-QTj">
-                                        <rect key="frame" x="0.0" y="74" width="151" height="30"/>
+                                        <rect key="frame" x="0.0" y="75" width="151" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Set Default Label Text"/>
                                         <connections>
@@ -49,6 +50,13 @@
                                     <constraint firstItem="dL8-6z-1SN" firstAttribute="leading" secondItem="iad-g0-Htf" secondAttribute="leading" id="vu0-2D-jCh"/>
                                 </constraints>
                             </stackView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="bx0-c1-XP9">
+                                <rect key="frame" x="20" y="236" width="320" height="320"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bx0-c1-XP9" secondAttribute="height" multiplier="15:8" id="aoB-r7-sIC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -64,6 +72,7 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="faC-5x-qUQ" id="cnS-Jy-rBu"/>
                         <outlet property="nameTextField" destination="dL8-6z-1SN" id="AhD-Y5-aWh"/>
+                        <outlet property="photoImageView" destination="bx0-c1-XP9" id="BcO-Gi-YtK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,4 +80,7 @@
             <point key="canvasLocation" x="320" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="250" height="125"/>
+    </resources>
 </document>
